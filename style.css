@@ -1,0 +1,233 @@
+:root{
+    --black:#0000;
+    --white:#ffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+ }
+ html{
+    scroll-behavior: smooth;
+ }
+
+ /*custom scroll bar*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+} 
+::-webkit-scrollbar-thumb{
+    background: #888;
+}
+::-webkit-scrollbar-thumb :hover{
+    background:#555;
+}
+
+/* all content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about .about-content,
+.portfolio .portfolio-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'circular', sans-serif;
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--black);
+    padding: 0 5px;
+    background: var(--white);
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 25px 0;
+    font-family: 'Circular', sans-serif;
+    transition: all 0.5s ease;
+}
+.navbar.sticky{
+    padding: 12px 0;
+    background: var(--black);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo img{
+    width: 90px;
+    margin-right: 10px;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: var(--black);
+}
+.navbar .sticky .menu li a:hover{
+    color: var(--white);
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: var(--white);
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/* home seaction styling */
+.home{
+    display: flex;
+    background: image("images/WhatsApp Image 2023-08-15 at 02.08.27.jpeg")no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'circular', sans-serif;
+}
+.home .max-width{
+    width: 100%;
+    display: flex;
+}
+.home .max-width .row{
+    margin: 0;
+}
+.home .home-content h1{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content p{
+    font-size: 20px;
+    margin: 5px 0;
+    margin-left: -3px;
+    opacity: 0;
+}
+.home .home-content p span{
+    color: var(--black);
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: none;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.home .home-content a:hover{
+    color: #fff;
+    background: var(--black);
+    border: 2px solid var(--black);
+}
+.home .home-content .slide-left{
+    animation: slideleft 1s linear forwards;
+}
+@keyframes slideleft{
+    0%{
+        transform: translate(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+.home .home-content p.slide-left{
+    animation-delay: 1s;
+}
+.home .home-content a.slide-left{
+    animation-delay: 2s;
+}
+
+/* about sections styling */
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: var(--black);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--black);
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: var(--black);
+    background: none;
+}
+
+/* portfolio styling */
+.portfolio{
+    color: var(--black);
+}
+.portfolio .portfolio-content .card .box img{
+    width: 100%;
+    object-fit: cover;
+    padding: 2rem;
+}
